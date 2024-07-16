@@ -1,0 +1,22 @@
+You are required to make a product page for the Exelsior Fountain Pen. The image is included. 
+The product page should have a heading with the pen title in it, 
+a picture of the product: 
+'exelsior-fountain-pen.jpg'
+a strapline:
+'The pride of our fountain pen range' 
+a price: £250
+Free shipping
+
+
+
+
+Product information
+'The Exelsior Fountain pen is a delight and a marvel, delightful to write with as it glides over the page and a mrvel to all who percieve it's grace and beauty.'
+A section for product details containing : 
+
+Product features
+
+'Lightweight design'
+'Superior writing comfort.
+
+A Button with the text 'add To Cart' this does not need to be functional at the moment
