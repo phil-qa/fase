@@ -1,0 +1,29 @@
+/* Mobile first approach */
+
+/* Default styles */
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Major breakpoint: Tablet/desktop */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+/* Minor breakpoint: Large desktop */
+@media (min-width: 992px) {
+  body {
+    font-size: 20px;
+  }
+  .container {
+    max-width: 960px;
+  }
+}
