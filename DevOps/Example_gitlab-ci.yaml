@@ -1,0 +1,72 @@
+stages:
+- build
+- test
+- deploy
+
+variables:
+MAVEN_OPTS: &quot;-Dmaven.repo.local=.m2/repository&quot;
+
+cache:
+paths:
+- .m2/repository
+- frontend/node_modules/
+
+before_script:
+- export MAVEN_HOME=/usr/share/maven
+- export PATH=$MAVEN_HOME/bin:$PATH
+- export NODEJS_HOME=/usr/local/node
+- export PATH=$NODEJS_HOME/bin:$PATH
+
+build_backend:
+stage: build
+script:
+- cd backend
+- mvn clean install
+artifacts:
+paths:
+
+- backend/target/*.jar
+
+build_frontend:
+stage: build
+script:
+- cd frontend
+- npm install
+- npm run build
+artifacts:
+paths:
+- frontend/build
+
+test_backend:
+stage: test
+script:
+- cd backend
+- mvn test
+artifacts:
+when: always
+reports:
+junit:
+- backend/target/surefire-reports/*.xml
+
+test_frontend:
+stage: test
+script:
+
+- cd frontend
+- npm test
+artifacts:
+when: always
+reports:
+junit:
+- frontend/test-results.xml
+
+deploy:
+stage: deploy
+script:
+# Add your deployment script here
+# Example for SCP:
+# - scp -r frontend/build user@server:/path/to/frontend
+# - scp backend/target/backend.jar user@server:/path/to/backend
+- echo &quot;Deploying...&quot;
+only:
+- master

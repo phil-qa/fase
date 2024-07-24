@@ -1,0 +1,21 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Build job placeholder"
+
+test:
+  stage: test
+  script:
+    - echo "Test job placeholder"
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploy job placeholder"
